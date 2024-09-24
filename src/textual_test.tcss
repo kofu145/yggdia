@@ -1,5 +1,15 @@
+$border-color-nofocus: $panel;
+$border-title-color-nofocus: $panel;
+$border-color-focus: white;
+$border-title-color-focus: blue;
+
 Placeholder {
     height: 100%;
+}
+Lazy {
+    border: round $border-color-nofocus;
+    border-title-color: $border-title-color-nofocus;
+    background: $background;
 }
 #bot {
     height: 95%;
@@ -11,8 +21,16 @@ Placeholder {
 #p1 {
     row-span: 8;
     column-span: 2;
-    border: round;
+    border: round $border-color-nofocus;
+    border-title-color: $border-title-color-nofocus;
+    background: $background;
+}   
+
+#p1:focus-within {
+    border: round $border-color-focus;
+    border-title-color: $border-title-color-focus;
 }
+
 
 #p2 {
     row-span: 4;

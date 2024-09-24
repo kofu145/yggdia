@@ -1,4 +1,3 @@
-import json
 from messagenode import MessageNode
 
 
@@ -25,7 +24,7 @@ class Handler:
         node_id = input("Enter id of node:")
         character = input("Enter character name (of speaker):")
         text = input("Dialogue:")
-        goto = input("Enter node id(s) of connected nodes (press enter for none):")
+        goto = input("Enter node id(s) of connected (press enter for none):")
         if_cond = input("Enter if cond for script check (enter for none):")
         emit_signal = input("Enter emit signal for script (enter for none):")
         self.nodes.append(MessageNode(node_id, character, text, goto,
@@ -35,7 +34,7 @@ class Handler:
         for node in self.nodes:
             if node.node_id == node_id:
                 if attr in node.__dict__:
-                    val = input("What to set attr %s?" %attr)
+                    val = input("What to set attr %s?" % attr)
                     setattr(node, attr, val)
                 else:
                     print("Attr does not exist!")

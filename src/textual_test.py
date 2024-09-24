@@ -1,10 +1,9 @@
 from textual.app import App, ComposeResult
-from textual.containers import Container, Horizontal, VerticalScroll
+from textual.containers import Container
 from textual.widgets import Header, Footer, Placeholder, Tabs, Tree
-from rich.text import Text
 
 
-class Editor(App):
+class yggeditor(App):
     """Editor w/ textual to manage writing nodes"""
 
     CSS_PATH = "textual_test.tcss"
@@ -28,11 +27,12 @@ class Editor(App):
         tree_nodes.add_leaf("OPTION_ONE")
         tree_nodes.add_leaf("OPTION_TWO")
         tree_nodes.add_leaf("OPTION_THREE")
+
         yield Container(
-            #Placeholder("tree area", id="p1"),
+            # Placeholder("tree area", id="p1"),
             tree,
-            Placeholder("attributes and labels", id="p2"),
-            Placeholder("p3 things", id="p3"),
+            Placeholder("editor", id="p2"),
+            Placeholder("Log", id="p3"),
             id="bot"
         )
         yield Tabs("New", "Edit", "Connect Nodes", id="tabs")
@@ -40,16 +40,15 @@ class Editor(App):
     def action_toggle_dark(self) -> None:
         """An action to toggle dark mode."""
         self.dark = not self.dark
-    
+
     def action_toggle_focus(self) -> None:
         """An action to toggle widget focus"""
         self.current_focus += 1
         if self.current_focus >= len(self.widget_ids):
             self.current_focus = 0
-        
-        self.query_one("#%s"%self.widget_ids[self.current_focus]).focus()
+        self.query_one("#p3").label = self.widget_ids[self.current_focus]
+        self.query_one("#{}".format(self.widget_ids[self.current_focus])).focus()
 
-
-if __name__ == "__main__":
-    app = Editor()
-    app.run()
+    def on_tree_node_highlighted(self, event: Tree.NodeHighlighted) -> None:
+        self.query_one("#p3").label = event.node.label
+        self.query_one("#p3").refresh()

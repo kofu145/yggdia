@@ -1,2 +1,5 @@
+from app import Yggdia
+
 if __name__ == "__main__":
-    print("hello test")
+    app = Yggdia()
+    app.run()

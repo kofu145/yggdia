@@ -1,0 +1,65 @@
+$border-color-nofocus: $panel;
+$border-title-color-nofocus: $panel;
+$border-color-focus: white;
+$border-title-color-focus: blue;
+
+
+Placeholder {
+    height: 100%;
+}
+
+Header {
+    height: 3;
+    dock: top;
+}
+
+#ctree {
+    width: 30%;
+    layout: grid;
+    grid-size: 1 1;
+}
+
+Label{
+    margin: 1 1 1 4;
+}
+
+Input{
+    margin: 1 1 1 5
+}
+
+#input {
+    width:70%;
+    border: round $border-color-nofocus;
+    border-title-color: $border-title-color-nofocus;
+    background: $background;
+}
+#tabs {
+}
+
+#dtree {
+    row-span: 1;
+    column-span: 1;
+    border: round $border-color-nofocus;
+    border-title-color: $border-title-color-nofocus;
+    background: $background;
+}   
+
+#dtree:focus-within {
+    border: round $border-color-focus;
+    border-title-color: $border-title-color-focus;
+}
+
+
+#editor {
+    row-span: 2;
+    column-span: 4;
+    border: round $border-color-nofocus;
+    border-title-color: $border-title-color-nofocus;
+}
+
+#content {
+    row-span: 2;
+    column-span: 4;
+    border: round $border-color-nofocus;
+    border-title-color: $border-title-color-nofocus;
+}
