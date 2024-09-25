@@ -33,7 +33,25 @@ Input{
     border-title-color: $border-title-color-nofocus;
     background: $background;
 }
+#input:focus-within {
+    border: round $border-color-focus;
+    border-title-color: $border-title-color-focus;
+}
+
 #tabs {
+}
+
+#new {
+    content-align: center middle;
+    width: 70%;
+    layer: above;
+    align: center middle;
+    border: round $border-color-focus;
+    border-title-color: $border-title-color-focus;
+}
+
+Screen {
+    align: center middle;
 }
 
 #dtree {
