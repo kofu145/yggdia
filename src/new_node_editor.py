@@ -38,7 +38,7 @@ class NewNodeEditor(Static):
             Label("Goto"),
             self.node_container,
             Horizontal(Button("Add Goto Node", id="add"), Button("Remove Goto Node", id="remove"), id="ButtonContainer"),
-            Horizontal(Button("Save", id="save"), Button("Cancel", id="cancel"), id="SaveCancelContainer")
+            Horizontal(Button("Save", id="save"), Button("Cancel", id="cancel"), id="new_confirm")
         )
 
 

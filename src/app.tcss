@@ -14,22 +14,31 @@ Header {
 }
 
 #ctree {
-    width: 30%;
+    width: 45%;
     layout: grid;
     grid-size: 1 1;
 }
 
 #ButtonContainer {
-    margin: 1 1 1 1;
+    margin: 0 1;
     height: auto;
+    padding: 1 5;
+    align: center middle;
+}
+
+#new_confirm{
+    margin: 0 1 1 1;
+    height: auto;
+    padding: 0 5;
+    align: center middle;
 }
 
 Label{
-    margin: 1 1 1 4;
+    margin: 1 1 0 4;
 }
 
 TextArea{
-    margin: 1 2 1 4;
+    margin: 0 2 0 4;
     height: auto;
     border: round $border-color-nofocus;
     border-title-color: $border-title-color-nofocus;
@@ -38,7 +47,7 @@ TextArea{
 }
 
 Input{
-    margin: 1 2 1 4;
+    margin: 0 4;
 }
 
 Select {
@@ -46,7 +55,7 @@ Select {
 }
 
 #input {
-    width:70%;
+    width:55%;
     border: round $border-color-nofocus;
     border-title-color: $border-title-color-nofocus;
     background: $background;
@@ -62,11 +71,23 @@ Select {
 #new {
     content-align: center middle;
     width: 70%;
-    height: 90%;
+    height: 80%;
     layer: above;
     align: center middle;
     border: round $border-color-focus;
     border-title-color: $border-title-color-focus;
+}
+
+#GotoNodes{
+    height:20%;
+}
+
+#new_GotoNodes{
+    height:15%;
+}
+
+#save_node_container{
+    align:center top;
 }
 
 #save_prompt {
@@ -84,14 +105,24 @@ Select {
     padding: 1 5;
 }
 
+.goto_button{
+    width:30%;
+}
+
 .save_button{
     width: 1fr;
 }
 
+.save_node_button{
+    width: 80%;
+    align: center bottom;
+    padding: 0 5;
+}
+
 .save_question {
     text-style: bold;
-    height: 50%;
-    padding: 3 1 1 1;
+    height: 4;
+    padding: 2 1 0 1;
     content-align: center top;
 }
 

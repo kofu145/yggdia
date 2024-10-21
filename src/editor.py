@@ -1,6 +1,6 @@
 from textual.widgets import Label, Input, Static, Select, SelectionList, Button, TextArea
 from textual.app import ComposeResult
-from textual.containers import ScrollableContainer, Horizontal
+from textual.containers import ScrollableContainer, Horizontal, Container
 from node import MessageNode
 
 class Editor(Static):
@@ -32,8 +32,8 @@ class Editor(Static):
             Input("", id="signal_input", placeholder="Signals to Emit"),
             Label("Goto"),
             self.node_container,
-            Horizontal(Button("Add Goto Node", id="add"), Button("Remove Goto Node", id="remove"), id="ButtonContainer"),
-            Button("Save Node", id="save")
+            Horizontal(Button("Add Goto Node", id="add", classes="goto_button"), Button("Remove Goto Node", id="remove", classes="goto_button"), id="ButtonContainer"),
+            Container(Button("Save Node", id="save", classes="save_node_button"), id="save_node_container")
         )
 
         self.current_node_id = None

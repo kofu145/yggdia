@@ -6,7 +6,8 @@
         "signal": "RAISE_APPROVAL",
         "diceroll": 0,
         "goto": [
-            "OPTION_ONE"
+            "OPTION_ONE",
+            "OPTION_TWO"
         ]
     },
     "OPTION_ONE": {
@@ -15,6 +16,34 @@
         "if_cond": "FLAG",
         "signal": "RAISE_APPROVAL",
         "diceroll": 0,
+        "goto": [
+            "DIALOGUE_THREE"
+        ]
+    },
+    "DIALOGUE_TWO": {
+        "character": "",
+        "text": "",
+        "if_cond": "",
+        "signal": "",
+        "diceroll": 0,
         "goto": []
+    },
+    "DIALOGUE_THREE": {
+        "character": "",
+        "text": "",
+        "if_cond": "",
+        "signal": "",
+        "diceroll": 0,
+        "goto": []
+    },
+    "OPTION_TWO": {
+        "character": "",
+        "text": "",
+        "if_cond": "",
+        "signal": "",
+        "diceroll": 0,
+        "goto": [
+            "DIALOGUE_TWO"
+        ]
     }
 }

@@ -8,10 +8,13 @@ class DialogueTree(Tree):
 
     def get_node_parents(self, node_id):
         found_parents = []
+        return self._get_parent_helper(node_id, found_parents)
+    
+    def _get_parent_helper(self, node_id, found_parents):
         for parent in self.message_nodes[node_id].parents:
             if parent not in self.message_nodes[node_id].goto: # failsafe for infinite loops
                 found_parents.append(parent)
-                self.get_node_parents(parent)
+                self._get_parent_helper(parent, found_parents)
         return found_parents
 
 
