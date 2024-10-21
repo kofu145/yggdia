@@ -23,7 +23,7 @@ class SavePrompt(Static):
     def action_save_file(self) -> None:
         serialize_dict = {}
         for key in self.app.message_nodes.keys():
-            serialize_dict[key] = self.app.message_nodes[key].__dict__
+            serialize_dict[key] = self.app.message_nodes[key].return_serial()
 
         with open(self.app.json_file, "w") as f:
             json.dump(serialize_dict, f, indent=4)

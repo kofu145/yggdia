@@ -10,8 +10,8 @@
         ]
     },
     "OPTION_ONE": {
-        "character": "name",
-        "text": "content",
+        "character": "OPTION NAME",
+        "text": "test",
         "if_cond": "FLAG",
         "signal": "RAISE_APPROVAL",
         "diceroll": 0,

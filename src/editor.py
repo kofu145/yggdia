@@ -52,7 +52,7 @@ class Editor(Static):
     def action_save_current(self) -> None:
 
         curr_node = self.app.message_nodes[self.current_node_id]
-        curr_node.node_id = curr_node
+        curr_node.node_id = self.current_node_id
         curr_node.character = self.query_one("#char_input").value
         curr_node.text = self.query_one("#text_input").text
         curr_node.goto = goto_nodes = [goto_node.value for goto_node in self.node_container.children if goto_node.value != Select.BLANK]

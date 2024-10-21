@@ -8,36 +8,24 @@ class DialogueTree(Tree):
 
     def get_node_parents(self, node_id):
         found_parents = []
-        for parent_id in self.message_nodes.keys():
-            if node_id in self.message_nodes[parent_id].goto:
-                found_parents.append(parent_id)
-        
-        parents_exist = True
-        iter_limit = 1000
-        while parents_exist:
-            parents_exist = self._get_node_parent_helper(found_parents)
-            iter_limit -=1 
-            if iter_limit <= 0: # Check case just in case this goes infinite
-                parents_exist = False
+        for parent in self.message_nodes[node_id].parents:
+            if parent not in self.message_nodes[node_id].goto: # failsafe for infinite loops
+                found_parents.append(parent)
+                self.get_node_parents(parent)
         return found_parents
-        
-    def _get_node_parent_helper(self, parents_arr):
-        orig_size = len(parents_arr)
-        for parent in parents_arr:
-            for parent_id in self.message_nodes.keys():
-                if parent in self.message_nodes[parent_id].goto:
-                    parents_arr.append(parent)
 
-        return len(parents_arr) > orig_size
-        
 
     def construct_node(self, root_id, root_tree_node):
         for child_node in self.message_nodes[root_id].goto:
             new_rt = root_tree_node.add(child_node, expand=True, allow_expand=False)
+            self.message_nodes[child_node].parents.append(root_id)
             self.construct_node(child_node, new_rt)
 
     def construct_tree(self):
         self.root.remove_children()
+        for message_node in self.message_nodes.keys():
+            self.message_nodes[message_node].parents = []
+
         self.root.expand()
         root_nodes = []
 
