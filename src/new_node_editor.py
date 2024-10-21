@@ -68,6 +68,7 @@ class NewNodeEditor(Static):
         self.app.message_nodes[self.query_one("#new_node_id_input").value] = new_node
         self.app.reconstruct_node_list()
         self.app.diatree.construct_tree()
+        self.app.new_editor_exists = False
         self.remove()
     
     def action_cancel(self) -> None:
