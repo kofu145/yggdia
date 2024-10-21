@@ -1,7 +1,7 @@
 $border-color-nofocus: $panel;
 $border-title-color-nofocus: $panel;
 $border-color-focus: white;
-$border-title-color-focus: blue;
+$border-title-color-focus: white;
 
 
 Placeholder {
@@ -19,13 +19,28 @@ Header {
     grid-size: 1 1;
 }
 
+#ButtonContainer {
+    margin: 1 1 1 1;
+    height: auto;
+}
+
 Label{
     margin: 1 1 1 4;
 }
 
-Input{
-    margin: 1 1 1 5
+TextArea{
+    margin: 1 2 1 4;
+    height: auto;
+    border: round $border-color-nofocus;
+    border-title-color: $border-title-color-nofocus;
+    background: $background;
+
 }
+
+Input{
+    margin: 1 2 1 4;
+}
+
 
 #input {
     width:70%;
@@ -44,6 +59,7 @@ Input{
 #new {
     content-align: center middle;
     width: 70%;
+    height: 90%;
     layer: above;
     align: center middle;
     border: round $border-color-focus;

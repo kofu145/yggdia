@@ -2,15 +2,21 @@
     "DIALOGUE_ONE": {
         "character": "name",
         "text": "content",
-        "if": "FLAG",
+        "if_cond": "FLAG",
         "signal": "RAISE_APPROVAL",
         "diceroll": 0,
         "goto": [
-            "OPTION_ONE",
             "OPTION_ONE"
         ]
     },
-    "OPTION_ONE":{
-
+    "OPTION_ONE": {
+        "character": "name",
+        "text": "content",
+        "if_cond": "FLAG",
+        "signal": "RAISE_APPROVAL",
+        "diceroll": 0,
+        "goto": [
+        ]
     }
+
 }
