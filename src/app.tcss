@@ -41,6 +41,9 @@ Input{
     margin: 1 2 1 4;
 }
 
+Select {
+    margin: 0 4;
+}
 
 #input {
     width:70%;
@@ -64,6 +67,32 @@ Input{
     align: center middle;
     border: round $border-color-focus;
     border-title-color: $border-title-color-focus;
+}
+
+#save_prompt {
+    content-align: center top;
+    width: 50%;
+    height: 25%;
+    layer: above;
+    border: round $border-color-focus;
+    border-title-color: $border-title-color-focus;
+}
+
+#save_buttons{
+    width: 100%;
+    height: auto;
+    padding: 1 5;
+}
+
+.save_button{
+    width: 1fr;
+}
+
+.save_question {
+    text-style: bold;
+    height: 50%;
+    padding: 3 1 1 1;
+    content-align: center top;
 }
 
 Screen {

@@ -1,5 +1,11 @@
 from app import Yggdia
+import argparse
 
 if __name__ == "__main__":
-    app = Yggdia("./dialogue/test.json")
+
+    parser = argparse.ArgumentParser(prog='yggdia', description='A CLI based dialogue tree editor.')
+    parser.add_argument("filename", nargs="?", help="filename of the JSON file with the dialogue tree you want to edit")
+    args = parser.parse_args()
+ 
+    app = Yggdia(args.filename)
     app.run()

@@ -6,6 +6,7 @@ from content_view import ContentView
 from editor import Editor
 from new_node_editor import NewNodeEditor
 from node import MessageNode
+from save_prompt import SavePrompt
 import json
 
 class Yggdia(App):
@@ -22,6 +23,7 @@ class Yggdia(App):
     def __init__(self, json_file: str):
         super().__init__()
         self.new_editor_exists = False
+        self.save_prompt_exists = False
 
         self.json_file = json_file
         with open(json_file, "r") as f:
@@ -108,3 +110,7 @@ class Yggdia(App):
                 self.editor.node_container.mount(goto_selector)
 
     
+    def action_save_dialogue(self):
+        if not self.save_prompt_exists:
+            self.mount(SavePrompt(id="save_prompt"))
+            self.save_prompt_exists = True
