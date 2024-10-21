@@ -2,7 +2,6 @@ from textual.app import App, ComposeResult
 from textual.containers import Container, Horizontal
 from textual.widgets import Header, Footer, Placeholder, Tabs, Tree, Label, Select
 from dialogue_tree import DialogueTree
-from content_view import ContentView
 from editor import Editor
 from new_node_editor import NewNodeEditor
 from node import MessageNode
@@ -105,7 +104,7 @@ class Yggdia(App):
                 selector.remove()
 
             for goto_node in self.message_nodes[node_id].goto:
-                goto_selector = Select([(node_name, node_name) for node_name in self.message_nodes.keys() if node_name != node_id], allow_blank=False, value=goto_node)
+                goto_selector = Select([(node_name, node_name) for node_name in self.message_nodes.keys() if node_name != node_id and node_name not in self.app.diatree.get_node_parents(node_id)], value=goto_node)
 
                 self.editor.node_container.mount(goto_selector)
 

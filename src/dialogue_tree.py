@@ -13,9 +13,12 @@ class DialogueTree(Tree):
                 found_parents.append(parent_id)
         
         parents_exist = True
+        iter_limit = 1000
         while parents_exist:
             parents_exist = self._get_node_parent_helper(found_parents)
-
+            iter_limit -=1 
+            if iter_limit <= 0: # Check case just in case this goes infinite
+                parents_exist = False
         return found_parents
         
     def _get_node_parent_helper(self, parents_arr):
