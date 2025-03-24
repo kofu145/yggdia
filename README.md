@@ -1,4 +1,5 @@
 # yggdia
+[![Lines Of Code](https://tokei.rs/b1/github/kofu145/yggdia?category=code)](https://github.com/kofu145/yggdia)
 Terminal-based game dialogue tree editor made with python
 
 ![](resources/image.png)
